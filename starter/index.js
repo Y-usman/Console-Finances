@@ -86,3 +86,112 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+// Initialize variables to store the total number of months in the array
+var totalMonths = finances.length ;
+// Initial variable for total profits/losses and set to zero
+var totalProfit_or_Losses = 0;
+// Loop through the array and add the numbers together
+for (i = 0; i < finances.length; i++){
+  totalProfit_or_Losses += finances[i][1];
+};
+//Create fucntion to calculate Average change
+function calculateAverageChange(arr) {
+  // Initialize variables to store the total change and the number of changes
+  var totalChange = 0;
+  var numChanges = 0;
+
+  // Iterate through the array starting from the second element
+  for (var i = 1; i < arr.length; i++) {
+    // Calculate the difference between the current and previous month
+    var change = arr[i][1] - arr[i - 1][1];
+
+    // Add the change to the total
+    totalChange += change;
+    
+    // Increment the number of changes
+    numChanges++;
+  }
+
+  // Calculate the average change
+  var averageChange = totalChange / numChanges;
+
+  // Return the result
+  return averageChange;
+}
+
+// Call the function with the array
+var result = calculateAverageChange(finances);
+
+
+function findGreatestIncrease(arr) {
+  // Initialize variables to store the result
+  var greatestIncrease = 0;
+  var greatestIncreaseDate = '';
+
+  // Iterate through the array starting from the second element
+  for (var i = 1; i < arr.length; i++) {
+    // Calculate the difference between the current and previous month
+    var currentIncrease = arr[i][1] - arr[i - 1][1];
+
+    // Check if the current increase is greater than the stored greatest increase
+    if (currentIncrease > greatestIncrease) {
+      greatestIncrease = currentIncrease;
+      greatestIncreaseDate = arr[i][0];
+    }
+  }
+
+  // Return the result
+  return [greatestIncreaseDate, greatestIncrease];
+}
+
+// Call the function with the array
+var increase = findGreatestIncrease(finances);
+
+
+function findGreatestDecrease(arr) {
+  // Initialize variables to store the result
+  var greatestDecrease = 0;
+  var greatestDecreaseDate = '';
+
+  // Iterate through the array starting from the second element
+  for (var i = 1; i < arr.length; i++) {
+    // Calculate the difference between the current and previous month
+    var currentDecrease = arr[i][1] - arr[i - 1][1];
+
+    // Check if the current decrease is less than the stored greatest decrease
+    if (currentDecrease < greatestDecrease) {
+      greatestDecrease = currentDecrease;
+      greatestDecreaseDate = arr[i][0];
+    }
+  }
+
+  // Return the result
+  return [greatestDecreaseDate, greatestDecrease];
+}
+
+// Call the function with the array
+var decrease = findGreatestDecrease(finances);
+
+
+// Print the Resulting Analysis as specified by the requested requirements
+console.log(
+    "Financial Analysis \n"
+    +"----------------"+"\n"
+    +"Total Months: " +totalMonths +"\n"
+    +"Total: $"+ totalProfit_or_Losses +"\n"
+    +"Average Change: " + result.toFixed(2) +"\n"
+    +"Greatest Increase in Profits/Losses: " +increase[0]+" ($"+increase[1] +") "+ "\n"
+    +"Greatest Decrease in Profits/Losses: " +decrease[0]+" ($"+decrease[1] +")"
+  );
+
+
+// Alternative using the toLocaleString() to format the numbers
+// console.log(
+//   "Financial Analysis \n"
+//   +"----------------"+"\n"
+//   +"Total Months: " +totalMonths +"\n"
+//   +"Total: "+ totalProfit_or_Losses.toLocaleString("en-US", { style: "currency", currency: "USD" }) +"\n"
+//   +"Average Change: " + result.toFixed(2) +"\n"
+//   +"Greatest Increase in Profits/Losses: " +increase[0]+" ("+increase[1].toLocaleString("en-US", { style: "currency", currency: "USD" })+ ")"+ "\n"
+//   +"Greatest Decrease in Profits/Losses: " +decrease[0]+" ("+decrease[1].toLocaleString("en-US", { style: "currency", currency: "USD" }) +")"
+// );
