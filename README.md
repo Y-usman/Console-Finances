@@ -1,7 +1,7 @@
 # Console-Finances - Yusuf Usman
 
 ## Deployed Application
-Aplication Url - https://y-usman.github.io/Console-Finances/starter/
+Aplication Url - https://y-usman.github.io/Console-Finances/
 
 ![Deployed application screenshot](/images/screenshot.png)
 
