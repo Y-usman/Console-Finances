@@ -1,7 +1,7 @@
 # Console-Finances - Yusuf Usman
 
 ## Deployed Application
-Aplication Url - https://y-usman.github.io/Console-Finances/
+Application Url - https://y-usman.github.io/Console-Finances/
 
 ![Deployed application screenshot](/images/screenshot.png)
 
@@ -13,7 +13,7 @@ Aplication Url - https://y-usman.github.io/Console-Finances/
 
 MIT License
 
-Copyright (c) [2023] [Yusuf A Usman](https://github.com/Y-usman/edxbootcamp/starter)
+Copyright (c) [2023] [Yusuf A Usman](https://github.com/Y-usman/edxbootcamp/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
